@@ -1,0 +1,108 @@
+
+#main p {
+  font-size: 2rem;
+  text-align: center;
+   padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+
+  &:after {
+    content: '';
+    border-right: 1px solid;
+    animation: flashing 0.4s linear infinite;
+  }
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 0;
+  }
+}
+
+
+
+#load_animation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+        padding: 50px 0;
+        img{
+            width: 30vh;
+            height: auto;
+            display: none;
+        }
+    }
+
+    .loading_gif {
+        padding: 500px 0;
+        img{
+            width: 120vh;
+            height: auto;
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+$topSlideShowCount: 4;
+$topSlideShowMove: 1s;
+$topSlideShowStop: 3s;
+$topSlideShowAll: ($topSlideShowMove * $topSlideShowCount) + ($topSlideShowStop * ($topSlideShowCount));
+$topSlideShowMoveProportion: $topSlideShowMove / $topSlideShowAll * 100%;
+$topSlideShowStopProportion: $topSlideShowStop / $topSlideShowAll * 100%;
+.top_slide_show {
+    overflow: hidden;
+    ul {
+        width: ($topSlideShowCount + 1) * 100%;
+        display: flex;
+        text-align:center;
+        animation-name: topSlideShow;
+        animation-delay: 0;
+        animation-duration: $topSlideShowAll;
+        animation-iteration-count: infinite;
+        li {
+            width: 100% / $topSlideShowCount;
+        }
+    }
+}
+.topSlideShowAll { z-index: $topSlideShowAll;}
+.topSlideShowMoveProportion { z-index: $topSlideShowMoveProportion;}
+.topSlideShowStopProportion { z-index: $topSlideShowStopProportion;}
+@keyframes topSlideShow {
+    0% {
+        margin-left: 0;
+    }
+    @for $i from 1 through $topSlideShowCount {
+        #{(($topSlideShowMoveProportion + $topSlideShowStopProportion) * ($i - 1)) + $topSlideShowStopProportion} {
+            margin-left: #{($i - 1) * -100%};
+        }
+        @if ($i < $topSlideShowCount) {
+            #{(($topSlideShowMoveProportion + $topSlideShowStopProportion) * ($i - 1)) + $topSlideShowMoveProportion + $topSlideShowStopProportion} {
+                margin-left: #{$i * -100%};
+            }
+        } @else {
+            99.999% {
+                margin-left: #{$i * -100%};
+            }
+        }
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+

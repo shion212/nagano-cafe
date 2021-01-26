@@ -1,0 +1,458 @@
+#load_animation {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #262626;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#load_animation .icon {
+  padding: 50px 0;
+}
+
+#load_animation .icon img {
+  width: 30vh;
+  height: auto;
+  display: none;
+}
+
+#load_animation .loading_gif {
+  padding: 500px 0;
+}
+
+#load_animation .loading_gif img {
+  width: 120vh;
+  height: auto;
+  display: none;
+}
+/*# sourceMappingURL=styles.css.map */
+
+
+
+body .wrapper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+}
+
+body .wrapper span {
+  z-index: 9999;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 35px;
+  height: 4px;
+  background: #000;
+  cursor: pointer;
+}
+
+body .wrapper span:before, body .wrapper span:after {
+  display: block;
+  position: absolute;
+  content: '';
+  left: 0;
+  height: 4px;
+  width: 35px;
+  background: #000;
+}
+
+body .wrapper span:before {
+  top: -8px;
+}
+
+body .wrapper span:after {
+  bottom: -8px;
+}
+
+body .wrapper .overlay {
+  position: absolute;
+  bottom: -99%;
+  height: 100%;
+  background: #8B0000;
+  left: 0;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+body .wrapper .overlay.anim {
+  left: 0;
+  bottom: 0;
+  animation: menu-anim 1.5s 1 ease-out forwards;
+  width: 25%;
+  transition: all 0.5s ease;
+}
+
+body .wrapper .overlay.anim.reverse-anim {
+  left: 0;
+  bottom: 0;
+  animation: menu-anim 1.5s 1 ease-out reverse;
+  width: 25%;
+  transition: all 0.5s ease;
+}
+
+body .wrapper .overlay ul {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+  padding-left: 0;
+  margin-left: -10px;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+body .wrapper .overlay ul li {
+  margin: 10px 0;
+}
+
+body .wrapper .overlay ul li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+body .wrapper .overlay ul li a:after {
+  display: block;
+  border-radius: 2px;
+  content: '';
+  left: 0;
+  bottom: -10px;
+  height: 5px;
+  background: #ffffff;
+  transform: translateX(-101%);
+}
+
+body .wrapper .overlay ul li a:hover {
+  text-decoration: none;
+}
+
+body .wrapper .overlay ul li a:hover:after {
+  animation: border-anim 0.5s 1 ease normal;
+  transform: translateX(0);
+}
+
+#main p {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0.5em;
+  /*文字周りの余白*/
+  color: #494949;
+  /*文字色*/
+  background: #fffaf4;
+  /*背景色*/
+  border-left: solid 5px #ffaf58;
+  /*左線（実線 太さ 色）*/
+}
+
+#main p:after {
+  content: '';
+  border-right: 1px solid;
+  animation: flashing 0.4s linear infinite;
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
+
+body{
+background-color:#FAF0E6;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    float:right;
+}
+
+form{
+    position: relative;
+    top: 3%;
+    left: 90%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+form:hover{
+    width: 200px;
+    cursor: pointer;
+}
+
+form:hover input{
+    display: block;
+}
+
+form:hover .fa{
+    background: #07051a;
+    color: white;
+}
+
+
+h4{
+    text-align:center;
+}
+
+
+
+/* ボタン全体 */
+.flowbtn7{
+border-radius:50%;
+position:relative;
+display:inline-block;
+width:50px;
+height:50px;
+font-size:30px;
+color:#fff!important;
+text-decoration:none;
+transition:.5s;
+}
+/* アイコンをど真ん中に*/
+.flowbtn7 i{
+position:absolute;
+top:50%;
+left:50%;
+-ms-transform:translate(-50%,-50%);
+-webkit-transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
+}
+/* ulタグの内側余白を０にする */
+ul.snsbtniti{
+padding:0!important;
+}
+/* ボタン全体の位置 */
+.snsbtniti{
+display:flex;
+flex-flow:row wrap;
+justify-content:space-around;
+}
+/* ボタン同士の余白 */
+.snsbtniti li{
+flex:0 0 000%;
+text-align:center !important;
+}
+/* ボタンにマウスを乗せた時 */
+.flowbtn7:hover{
+-webkit-transform:translateY(-5px);
+-ms-transform:translateY(-5px);
+transform:translateY(-5px);
+}
+/* Twitter */
+.fl_tw7{
+background:linear-gradient(135deg, #13f1fc 0%,#0470dc 100%);
+}
+/* Instagramアイコン位置 */
+.insta_btn7 .fa-instagram{
+font-size:35px;
+}
+/* Instagram紫グラデ背景 */
+.insta_btn7{
+background:-webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+background:linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+overflow:hidden;
+}
+/* Instagramオレンジグラデ背景 */
+.insta_btn7:before{
+content: '';
+position:absolute;
+top:27px;
+left:-12px;
+width:59px;
+height:40px;
+background:-webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+background:radial-gradient(#ffdb2c 5%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+}
+/* Facebook */
+.fl_fb7{
+background: linear-gradient(135deg, #6699ff 0%,#3b5998 100%);
+}
+
+
+
+
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 100%;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    padding: 50px;
+    width: auto;
+    margin:auto;
+}
+
+.toc_title {
+    font-weight: 700;
+    margin:auto;
+}
+
+#toc_container li, #toc_container ul, #toc_container ul li{
+    list-style-position: outside;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 0;
+    text-align:centre;
+
+    /* リストの記号を付けない場合は
+     list-style: outside none none !important;
+    */
+}
+
+.container h2{
+    text-align:center;
+    line-height: 350px;
+}
+
+body {
+  text-align:center;
+}
+
+
+
+#menu{
+  background: #BAD3FF;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  text-align: justify;
+  text-justify: inter-ideograph;
+   width: 500px;
+   margin:auto;
+}
+
+
+footer img {
+  width: 125px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+}
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+
+
+
+.body {
+margin:0;
+}
+
+#red{
+  border-top: solid #A44B4B;
+  border-width: 15px;
+  background: #2E2E2E;
+  position:absolute;
+  bottom:0;
+  height:100%;
+  width:100%;
+  height:180px;
+}
+
+.text {
+  color: #424242;
+  font-family: Lato;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.text2 {
+  color: #424242;
+  font-family: Lato;
+  font-size: 20px;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.text3 {
+  color: #424242;
+  font-family: Lato;
+  font-size: 20px;
+  text-align: center;
+  margin-top: -20px;
+  float: center;
+}
+
+#page-footer {
+  display: none !important;
+}
+
+
+footer img {
+  width: 125px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+}
+
+.main h3{
+    padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+}
